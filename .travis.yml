@@ -23,3 +23,8 @@ notifications:
       - albparmor2@alum.us.es
     on_success: always 
     on_failure: always
+deploy:
+  - provider: heroku
+    app: egc-app-albparmor2-1230
+    strategy: git
+    api_key: $HEROKU_AUTH_TOKEN
