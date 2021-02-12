@@ -8,6 +8,7 @@ before_script:
   - psql -U postgres -c "create user decide password 'decide'"
   - psql -U postgres -c "create database test_decide owner decide"
   - psql -U postgres -c "ALTER USER decide CREATEDB"
+  - cp decide/local_settings.travis.py decide/local_settings.py
 language: python
 python:
   - "3.6"
@@ -16,3 +17,9 @@ install:
 script:
   - cd decide
   - ./manage.py test census --keepdb
+notifications:
+  email:
+    recipients:
+      - albparmor2@alum.us.es
+    on_success: always 
+    on_failure: always
