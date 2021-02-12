@@ -3,7 +3,7 @@
   become: yes
   become_user: decide
   git:
-    repo: 'https://github.com/wadobo/decide.git'
+    repo: 'https://github.com/albparmor2/EGC-1230-albparmor2.git'
     dest: /home/decide/decide
     version: master
 
